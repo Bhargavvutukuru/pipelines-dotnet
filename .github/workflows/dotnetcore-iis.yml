@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to IIS
       run: |
         iisreset /stop
-        Copy-Item ./pipelines_dotnet_core/* C:/HostRepo/pipelines-dotnet -Recurse -Force
+        Copy-Item ./ * C:/HostRepo/pipelines-dotnet -Recurse -Force
         iisreset /start
     
     - name: Curl the website as a smoke test
