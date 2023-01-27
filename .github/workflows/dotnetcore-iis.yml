@@ -21,11 +21,11 @@ jobs:
     
     # dotnet build and publish
     - name: Build with dotnet
-      run: dotnet build --configuration Release .\pipelines_dotnet_core
+      run: dotnet build --configuration Release .\
 
     - name: dotnet publish 
       run: |
-        dotnet publish -c Release -o pipelines_dotnet_core .\pipelines_dotnet_core
+        dotnet publish -c Release -o pipelines_dotnet_core .\
 
     - name: Deploy to IIS
       run: |
