@@ -25,12 +25,12 @@ jobs:
 
     - name: dotnet publish 
       run: |
-        dotnet publish --configuration Release --no-build --output ./pipelines-dotnet/Models/
+         dotnet publish -c Release -o dotnetcorewebapp .\
 
     - name: Deploy to IIS
       run: |
         iisreset /stop
-        Copy-Item ./ * C:/HostRepo/pipelines-dotnet -Recurse -Force
+         Copy-Item ./TestApplication/* C:\HostRepo -Recurse -Force
         iisreset /start
     
     - name: Curl the website as a smoke test
