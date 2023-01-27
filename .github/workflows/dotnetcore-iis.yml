@@ -25,7 +25,7 @@ jobs:
 
     - name: dotnet publish 
       run: |
-        dotnet publish -c Release -o pipelines_dotnet_core .\
+        dotnet publish -c Release -o C:\HostRepo\
 
     - name: Deploy to IIS
       run: |
