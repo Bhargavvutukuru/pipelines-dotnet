@@ -21,16 +21,16 @@ jobs:
     
     # dotnet build and publish
     - name: Build with dotnet
-      run: dotnet build --configuration Release .\pipelines-dotnet-core
+      run: dotnet build --configuration Release .\pipelines_dotnet_core
 
     - name: dotnet publish 
       run: |
-        dotnet publish -c Release -o pipelinesdotnet .\pipelines-dotnet
+        dotnet publish -c Release -o pipelines_dotnet_core .\pipelines_dotnet_core
 
     - name: Deploy to IIS
       run: |
         iisreset /stop
-        Copy-Item ./pipelinesdotnet/* C:/inetpub/wwwroot/pipelines-dotnet -Recurse -Force
+        Copy-Item ./pipelines_dotnet_core/* C:/inetpub/wwwroot/pipelines-dotnet -Recurse -Force
         iisreset /start
     
     - name: Curl the website as a smoke test
