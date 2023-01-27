@@ -25,7 +25,7 @@ jobs:
 
     - name: dotnet publish 
       run: |
-        dotnet publish -c Release -o C:\HostRepo\
+        dotnet publish --configuration Release --no-build --output ./pipelines-dotnet/Models/
 
     - name: Deploy to IIS
       run: |
