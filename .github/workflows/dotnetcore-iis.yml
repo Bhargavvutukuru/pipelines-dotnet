@@ -25,7 +25,7 @@ jobs:
 
     - name: dotnet publish 
       run: |
-         dotnet publish -c Release -o dotnetcorewebapp .\
+         dotnet publish -c Release -o TestApplication .\
 
     - name: Deploy to IIS
       run: |
